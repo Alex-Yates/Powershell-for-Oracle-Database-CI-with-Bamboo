@@ -7,7 +7,7 @@ Write-Output "Using the following variables:"
 Write-Output "schemaComparePath: $schemaComparePath"
 Write-Output "targetSchemaName: $targetSchemaName"
 Write-Output "username: $username"
-Write-Output "password: $password"
+Write-Output "password: has been set to the bamboo variable OracleDbPassword"
 Write-Output "sourceName: $sourceName"
 
 Write-Warning "Upgrading $targetSchemaName"
