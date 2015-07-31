@@ -1,0 +1,1 @@
+pack ${bamboo.build.working.directory}\Widget\db\widget.nuspec /version 0.${bamboo.buildNumber}
