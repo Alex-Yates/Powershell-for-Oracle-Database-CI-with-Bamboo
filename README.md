@@ -4,11 +4,11 @@ for an Oracle database using Atlassian Bamboo and PowerShell
 
 Requires that the following Bamboo variables are set:
 
-SourceSchemaName
-OracleDbUser
-OracleDbTestSchema
-OracleDbPassword
-OracleDbLiveSchema
+- SourceSchemaName
+- OracleDbUser
+- OracleDbTestSchema
+- OracleDbPassword
+- OracleDbLiveSchema
 
 This could probably be improved by using variable substitution 
 and use a single TargetOracleDbSchema variable that is overridden
