@@ -13,7 +13,7 @@ Write-Output "sourceName: $sourceName"
 Write-Warning "Upgrading $targetSchemaName"
 
 # Create upgrade script using compare
-& $schemaComparePath -source "${bamboo.build.working.directory}\Widget\db\state{$sourceName}" -target "$username/$password@localhost{$targetSchemaName}" -deploy -verbose -scriptfile "${bamboo.build.working.directory}\artifacts\upgradeScript.sql" -report  "${bamboo.build.working.directory}\artifacts\diffReport.html" -reporttype Simple -includeidentical | Out-Host
+& $schemaComparePath -source "${bamboo.build.working.directory}\Widget\db\state{$sourceName}" -target "$username/$password@localhost{$targetSchemaName}" -deploy -scriptfile "${bamboo.build.working.directory}\artifacts\upgradeScript.sql" -report  "${bamboo.build.working.directory}\artifacts\diffReport.html" -reporttype Simple -includeidentical | Out-Host
 
 Write-Output "Schema Compare for Oracle exited with code $lastExitCode"
 
