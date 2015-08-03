@@ -1,14 +1,17 @@
 # Configuration
 $schemaComparePath = 'C:\\Program Files\\Red Gate\\Schema Compare for Oracle 3\\SCO.exe'
+$schemaRelativePath = "${bamboo.schemaRelativePath}"
 $targetSchemaName = "${bamboo.OracleDbIntegrationSchema}"
 $host = "${bamboo.OracleDbHost}"
 $username = "${bamboo.OracleDbUser}"
 $password = "${bamboo.OracleDbPassword}"
 $sourceName = "${bamboo.SourceSchemaName}"
 
+
 # Logging config variables for troubleshooting
 Write-Output "Using the following variables:"
 Write-Output "schemaComparePath: $schemaComparePath"
+Write-Output "schemaRelativePath: $schemaRelativePath"
 Write-Output "targetSchemaName: $targetSchemaName"
 Write-Output "host: $host"
 Write-Output "username: $username"
@@ -18,7 +21,7 @@ Write-Output "sourceName: $sourceName"
 # Deploy changes using Redgate Schema Compare for Oracle
 Write-Warning "Upgrading $targetSchemaName"
 
-& $schemaComparePath -source "${bamboo.build.working.directory}\Widget\db\state{$sourceName}" -target "$username/$password@$host{$targetSchemaName}" -deploy -scriptfile "${bamboo.build.working.directory}\artifacts\upgradeScript.sql" -report  "${bamboo.build.working.directory}\artifacts\diffReport.html" -reporttype Simple -includeidentical | Out-Host
+& $schemaComparePath -source "${bamboo.build.working.directory}\${bamboo.schemaRelativePath}{$sourceName}" -target "$username/$password@$host{$targetSchemaName}" -deploy -scriptfile "${bamboo.build.working.directory}\artifacts\upgradeScript.sql" -report  "${bamboo.build.working.directory}\artifacts\diffReport.html" -reporttype Simple -includeidentical | Out-Host
 
 # Logging the Schema Compare exit code and path to artifacts
 Write-Output "Schema Compare for Oracle exited with code $lastExitCode"

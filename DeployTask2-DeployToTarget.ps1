@@ -1,6 +1,7 @@
 # Configuration
 $schemaComparePath = 'C:\\Program Files\\Red Gate\\Schema Compare for Oracle 3\\SCO.exe'
 $targetSchemaName = "${bamboo.OracleDbLiveSchema}"
+$schemaRelativePath = "${bamboo.schemaRelativePath}"
 $host = "${bamboo.OracleDbHost}"
 $username = "${bamboo.OracleDbUser}"
 $password = "${bamboo.OracleDbPassword}"
@@ -9,6 +10,7 @@ $sourceName = "${bamboo.SourceSchemaName}"
 # Logging config variables for troubleshooting
 Write-Output "Using the following variables:"
 Write-Output "schemaComparePath: $schemaComparePath"
+Write-Output "schemaRelativePath: $schemaRelativePath"
 Write-Output "targetSchemaName: $targetSchemaName"
 Write-Output "host: $host"
 Write-Output "username: $username"
