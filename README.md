@@ -5,9 +5,11 @@ for an Oracle database using Atlassian Bamboo and PowerShell
 Requires that the following Bamboo variables are set:
 
 - SourceSchemaName
+- schemaRelativePath
+- OracleTns
 - OracleDbUser
-- OracleDbTestSchema
 - OracleDbPassword
+- OracleDbTestSchema
 - OracleDbLiveSchema
 
 This could probably be improved by using variable substitution 
