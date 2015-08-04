@@ -9,7 +9,7 @@ Requires that the following Bamboo variables are set:
 - OracleTns
 - OracleDbUser
 - OracleDbPassword
-- OracleDbTestSchema
+- OracleDbIntegrationSchema
 - OracleDbLiveSchema
 
 This could probably be improved by using variable substitution 
