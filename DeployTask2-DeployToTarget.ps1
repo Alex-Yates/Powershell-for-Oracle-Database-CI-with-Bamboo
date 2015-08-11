@@ -20,7 +20,7 @@ Write-Output "sourceName: $sourceName"
 # Deploy changes using Redgate Schema Compare for Oracle
 Write-Warning "Upgrading $targetSchemaName"
 
-& $schemaComparePath -source "${bamboo.build.working.directory}\extractedNuGet\state{$sourceName}" -target "$username/$password@$tns{$targetSchemaName}" -deploy -scriptfile "${bamboo.build.working.directory}\artifacts\upgradeScript.sql" -report  "${bamboo.build.working.directory}\artifacts\diffReport.html" -reporttype Simple -includeidentical | Out-Host
+& $schemaComparePath -source "${bamboo.build.working.directory}\${schemaRelativePath}{$sourceName}" -target "$username/$password@$tns{$targetSchemaName}" -deploy -scriptfile "${bamboo.build.working.directory}\artifacts\upgradeScript.sql" -report  "${bamboo.build.working.directory}\artifacts\diffReport.html" -reporttype Simple -includeidentical | Out-Host
 
 # Logging the Schema Compare exit code and path to artifacts
 Write-Output "Schema Compare for Oracle exited with code $lastExitCode"
