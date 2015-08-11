@@ -2,7 +2,7 @@
 $schemaComparePath = 'C:\\Program Files\\Red Gate\\Schema Compare for Oracle 3\\SCO.exe'
 $targetSchemaName = "${bamboo.OracleDbLiveSchema}"
 $schemaRelativePath = "${bamboo.schemaRelativePath}"
-$host = "${bamboo.OracleTns}"
+$tns = "${bamboo.OracleTns}"
 $username = "${bamboo.OracleDbUser}"
 $password = "${bamboo.OracleDbPassword}"
 $sourceName = "${bamboo.SourceSchemaName}"
