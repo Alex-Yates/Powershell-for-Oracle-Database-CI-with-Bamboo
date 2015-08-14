@@ -2,7 +2,12 @@
 These are the scripts I have used to set up a CI process 
 for an Oracle database using Atlassian Bamboo and PowerShell
 
-Requires that the following Bamboo variables are set:
+I have documented how to configure Bamboo to run these scripts
+here:
+
+http://workingwithdevs.com/continuous-delivery-oracle-databases-bamboo-redgate-1/
+
+These scripts require that the following Bamboo variables are set:
 
 - SourceSchemaName
 - schemaRelativePath
@@ -12,6 +17,8 @@ Requires that the following Bamboo variables are set:
 - OracleDbIntegrationSchema
 - OracleDbLiveSchema
 
+Also, DeployTask1 requires .NET 4.5.
+
 This could probably be improved by using variable substitution 
-and use a single TargetOracleDbSchema variable that is overridden
-for different environments but I haven't exp[lored how to do that.
+with a single TargetOracleDbSchema variable that is overridden
+for different environments but I haven't explored that.
